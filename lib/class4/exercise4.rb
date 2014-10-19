@@ -28,7 +28,29 @@
 
 # rubocop:disable MethodLength
 def old_school_roman_numeral(num)
-  num # change me
+  rev_num = num
+  roman = ''
+  numerals = [
+    [1000, 'M'],
+    [500, 'D'],
+    [100, 'C'],
+    [50, 'L'],
+    [10, 'X'],
+    [5, 'V'],
+    [1, 'I']
+  ]
+
+  while rev_num > 0
+    numerals.each do |rom|
+      next if rev_num / rom[0] < 1
+
+      roman += rom[1]
+      rev_num -= rom[0]
+      break
+    end
+  end
+
+  roman
 end
 
 input = ARGV[0].to_i
