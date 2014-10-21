@@ -26,15 +26,18 @@
 require 'yaml'
 
 def database
-  '/replace/me'
+  File.dirname(File.absolute_path(__FILE__)) + '/database.yml'
 end
 
 def load
-  ['replace me']
+  read_string = File.read(database)
+  YAML.load(read_string)
 end
 
 def find(id)
-  id # fix me
+  read_array = load
+
+  return read_array[id - 1] unless read_array[id - 1].nil?
 end
 
 input = ARGV[0].to_i
