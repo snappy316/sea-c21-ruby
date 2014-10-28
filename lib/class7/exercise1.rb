@@ -58,6 +58,7 @@ class String
 end
 
 class Integer
+  # rubocop:disable MethodLength
   def to_roman
     rev_num = self
     roman = ''
