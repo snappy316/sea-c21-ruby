@@ -47,28 +47,57 @@
 
 class Integer
   def hours_in_seconds
-    # replace me
+    self * 60 * 60
   end
 end
 
 class String
   def indent(amount = 2)
-    amount # replace me
+    ' ' * amount + self
   end
 end
 
 class Integer
   def to_roman
-    # replace me
+    rev_num = self
+    roman = ''
+
+    numerals = [
+      [1000, 'M'],
+      [900, 'CM'],
+      [500, 'D'],
+      [400, 'CD'],
+      [100, 'C'],
+      [90, 'XC'],
+      [50, 'L'],
+      [40, 'XL'],
+      [10, 'X'],
+      [9, 'IX'],
+      [5, 'V'],
+      [4, 'IV'],
+      [1, 'I']
+    ]
+
+    while rev_num > 0
+      numerals.each do |rom|
+        next if rev_num / rom[0] < 1
+
+        roman += rom[1]
+        rev_num -= rom[0]
+        break
+      end
+    end
+
+    roman
   end
 end
 
 class Array
   def second
-    # replace me
+    self[1]
   end
 
   def third
-    # replace me
+    self[2]
   end
 end

@@ -23,5 +23,15 @@
 #     orange_tree.fruit      #=> 44
 
 class OrangeTree
-  # replace me
+  def initialize
+    @fruit = 50
+  end
+
+  def fruit
+    @fruit
+  end
+
+  def pick!(amount = 1)
+    @fruit -= amount unless @fruit < amount
+  end
 end

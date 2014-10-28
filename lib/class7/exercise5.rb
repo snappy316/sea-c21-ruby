@@ -36,5 +36,23 @@
 # should stop and rethink your approach.
 
 class OrangeTree
-  # replace me
+  def initialize(fruit = 50)
+    @fruit = fruit
+  end
+
+  def fruit
+    @fruit
+  end
+
+  def pick(amount = 1)
+    OrangeTree.new(@fruit - amount) unless @fruit < amount
+  end
+
+  def pick!(amount = 1)
+    @fruit -= amount unless @fruit < amount
+  end
+
+  def ==(other)
+    return true if fruit == other.fruit
+  end
 end
