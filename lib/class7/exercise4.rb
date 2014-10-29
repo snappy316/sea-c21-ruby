@@ -30,10 +30,6 @@ class OrangeTree
     @fruit = fruit
   end
 
-  def fruit
-    @fruit
-  end
-
   def pick!(amount = 1)
     @fruit -= amount unless @fruit < amount
   end
@@ -41,4 +37,10 @@ class OrangeTree
   def ==(other)
     return true if fruit == other.fruit
   end
+
+  # def fruit
+  #   @fruit
+  # end
+
+  attr_reader :name
 end

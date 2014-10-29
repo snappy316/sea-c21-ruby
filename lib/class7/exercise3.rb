@@ -27,11 +27,13 @@ class OrangeTree
     @fruit = 50
   end
 
-  def fruit
-    @fruit
-  end
-
   def pick!(amount = 1)
     @fruit -= amount unless @fruit < amount
   end
+
+  # def fruit
+  #   @fruit
+  # end
+
+  attr_reader :name
 end
