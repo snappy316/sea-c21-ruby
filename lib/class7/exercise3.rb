@@ -36,5 +36,5 @@ class OrangeTree
   #   @fruit
   # end
 
-  attr_reader :name
+  attr_reader :fruit
 end
